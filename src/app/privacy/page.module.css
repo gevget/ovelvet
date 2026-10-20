@@ -1,0 +1,6 @@
+.page { max-width: 920px; padding-top: clamp(52px, 8vw, 112px); padding-bottom: var(--section-space); }
+.page h1 { margin: 24px 0 60px; font: 500 clamp(44px, 7vw, 84px)/.94 var(--font-display); letter-spacing: -.03em; text-transform: uppercase; }
+.notice { max-width: 720px; padding: 26px; background: var(--color-bg-soft); }
+.notice span { font-size: 13px; letter-spacing: .1em; }
+.notice h2 { margin: 20px 0 14px; font: 500 clamp(26px, 3.4vw, 38px)/1 var(--font-display); text-transform: uppercase; }
+.notice p { color: var(--color-text-muted); font-size: 14px; line-height: 1.65; }

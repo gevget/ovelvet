@@ -1,0 +1,17 @@
+.page { padding-top: clamp(52px, 8vw, 112px); padding-bottom: var(--section-space); }
+.header { max-width: 930px; padding-bottom: clamp(42px, 7vw, 88px); }
+.header h1 { margin: 22px 0; font: 500 clamp(48px, 8vw, 98px)/.92 var(--font-display); letter-spacing: -.03em; text-transform: uppercase; }
+.header > p:last-child { max-width: 650px; color: var(--color-text-muted); font-size: 17px; line-height: 1.6; }
+.columns { display: grid; grid-template-columns: .65fr 1.35fr; gap: clamp(32px, 8vw, 112px); border-top: 1px solid var(--color-border); padding-top: 32px; }
+.note > span { font-size: 13px; letter-spacing: .1em; }
+.note h2, .formWrap h2 { margin: 18px 0; font: 500 clamp(30px, 4vw, 48px)/1 var(--font-display); text-transform: uppercase; }
+.realContacts { display: grid; gap: 10px; margin: 20px 0; }
+.realContacts a { width: fit-content; color: var(--color-ink); font-size: 14px; text-underline-offset: 4px; }
+.addressBlock { margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--color-border); }
+.addressBlock > span { color: var(--color-text-muted); font-size: 13px; letter-spacing: .1em; }
+.addressBlock p { margin: 12px 0 0; color: var(--color-ink); font-size: 15px; line-height: 1.5; }
+.note p, .formLead { color: var(--color-text-muted); font-size: 14px; line-height: 1.6; }
+.status { margin-top: 28px; padding: 16px; background: var(--color-bg-soft); font-size: 13px; line-height: 1.55; }
+.formWrap { max-width: 720px; }
+.formLead { margin: 0 0 28px; }
+@media (max-width: 767px) { .columns { grid-template-columns: 1fr; } }

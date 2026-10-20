@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" role="img" aria-labelledby="title desc">
+  <title id="title">Условная схема натяжной стены</title>
+  <desc id="desc">Схема показывает основание, профильную систему, возможный дополнительный слой и текстильное полотно. Не является рабочим чертежом.</desc>
+  <rect width="1000" height="680" fill="#F5F2ED"/>
+  <text x="70" y="76" fill="#56534F" font-family="Arial, sans-serif" font-size="14" letter-spacing="2">ПРИНЦИП КОНСТРУКЦИИ</text>
+  <text x="930" y="76" text-anchor="end" fill="#56534F" font-family="Arial, sans-serif" font-size="14" letter-spacing="1">НЕ РАБОЧИЙ ЧЕРТЁЖ</text>
+  <rect x="116" y="132" width="92" height="392" fill="#DDD6CD"/>
+  <rect x="208" y="132" width="40" height="392" fill="#A78C75"/>
+  <rect x="248" y="132" width="148" height="392" fill="#E9E3DA" stroke="#56534F" stroke-width="2" stroke-dasharray="8 8"/>
+  <rect x="396" y="132" width="18" height="392" fill="#20201F"/>
+  <line x1="208" y1="188" x2="570" y2="188" stroke="#56534F" stroke-width="1"/>
+  <line x1="322" y1="306" x2="570" y2="306" stroke="#56534F" stroke-width="1"/>
+  <line x1="405" y1="420" x2="570" y2="420" stroke="#56534F" stroke-width="1"/>
+  <line x1="160" y1="540" x2="414" y2="540" stroke="#56534F" stroke-width="1"/>
+  <text x="596" y="194" fill="#20201F" font-family="Arial, sans-serif" font-size="20">Профильная система</text>
+  <text x="596" y="312" fill="#20201F" font-family="Arial, sans-serif" font-size="20">Дополнительный слой · по задаче</text>
+  <text x="596" y="426" fill="#20201F" font-family="Arial, sans-serif" font-size="20">Текстильное полотно</text>
+  <text x="116" y="576" fill="#56534F" font-family="Arial, sans-serif" font-size="14" letter-spacing="1">ОСНОВАНИЕ</text>
+  <text x="70" y="628" fill="#56534F" font-family="Arial, sans-serif" font-size="14">Конфигурацию и узлы определяют по документации выбранной системы.</text>
+</svg>

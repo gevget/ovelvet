@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc"><title id="title">ИНТЕРЬЕР</title><desc id="desc">Декоративная заглушка, не фотография объекта</desc>
+<rect width="1600" height="900" fill="#F5F2ED"/>
+<rect x="112" y="72" width="1376" height="666" fill="#DDD6CD"/>
+<path d="M112 738 L592 576 L1504 630 L1504 810 L112 810 Z" fill="#CBC2B7"/>
+<rect x="240" y="144" width="496" height="477" fill="#E9E3DA"/>
+<line x1="240" y1="144" x2="240" y2="621" stroke="#A78C75" stroke-width="6"/>
+<line x1="736" y1="144" x2="736" y2="621" stroke="#BEB4A8" stroke-width="3"/>
+<rect x="0" y="792" width="1600" height="108" fill="#20201F"/>
+<text x="58" y="843" fill="#FFFFFF" font-family="Arial, sans-serif" font-weight="bold" font-size="31">ИНТЕРЬЕР</text>
+<text x="58" y="880" fill="#D7CDC3" font-family="Arial, sans-serif" font-size="18">PLACEHOLDER · заменить фотографией проекта</text>
+</svg>
