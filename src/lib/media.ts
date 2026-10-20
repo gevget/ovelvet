@@ -45,8 +45,11 @@ export type MediaAsset = {
   caption?: string;
 };
 
+const basePath = (process.env.NEXT_PUBLIC_BASE_PATH ?? "").replace(/\/$/, "");
+const withBasePath = (src: string) => `${basePath}${src}`;
+
 const placeholder = (src: string, width: number, height: number, variant: MediaAsset["variant"]): MediaAsset => ({
-  src,
+  src: withBasePath(src),
   alt: "",
   width,
   height,
@@ -64,7 +67,7 @@ const generatedConcept = (
   alt: string,
   caption: string
 ): MediaAsset => ({
-  src,
+  src: withBasePath(src),
   alt,
   width,
   height,
@@ -101,7 +104,7 @@ export const mediaRegistry: Record<MediaSlot, MediaAsset> = {
   businessHero: generatedConcept("/images/generated/business-meeting-graphite-wide.png", 1536, 1024, "wide", "Переговорная в коммерческом пространстве с натяжной стеной графитового цвета, длинным столом и кожаными креслами", "Концепт коммерческого интерьера · не фото проекта"),
   technologyCutaway: generatedConcept("/images/generated/wall-cutaway-concept-wide.png", 1448, 1086, "technical", "Концептуальный разрез натяжной стены: основание, профильная система, возможный дополнительный слой и натянутое текстильное полотно", "Концептуальная визуализация · не рабочий чертёж"),
   technologyDiagram: {
-    src: "/images/diagrams/wall-scheme.svg",
+    src: withBasePath("/images/diagrams/wall-scheme.svg"),
     alt: "Условная схема: основание, профильная система, возможный дополнительный слой и текстильное полотно",
     width: 1000,
     height: 680,

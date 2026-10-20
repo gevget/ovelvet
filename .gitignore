@@ -1,5 +1,6 @@
 node_modules/
 .next/
+out/
 old/
 .env*
 !.env.example
@@ -7,15 +8,3 @@ playwright-report/
 test-results/
 coverage/
 *.tsbuildinfo
-
-# Workspace planning files; the GitHub repository contains the site application only.
-/AGENTS.md
-/START_CODEX.md
-/PACKS_STATUS.md
-/README.md
-/01_FOUNDATION/
-/02_DESIGN_SYSTEM/
-/03_CONTENT_SEO/
-/04_IMPLEMENTATION/
-/05_LAUNCH_QA/
-/docs/

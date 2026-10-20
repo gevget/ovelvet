@@ -15,6 +15,7 @@ export function SiteHeader() {
   const triggerRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const moreMenuRef = useRef<HTMLDetailsElement>(null);
+  const previousPathnameRef = useRef(pathname);
   const moreNavigation = footerNavigation.slice(navigation.length);
 
   const updateMobileMenuPosition = useCallback(() => {
@@ -41,6 +42,8 @@ export function SiteHeader() {
   }, []);
 
   useEffect(() => {
+    if (previousPathnameRef.current === pathname) return;
+    previousPathnameRef.current = pathname;
     if (moreMenuRef.current) moreMenuRef.current.open = false;
   }, [pathname]);
 

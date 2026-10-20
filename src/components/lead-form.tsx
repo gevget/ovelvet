@@ -58,6 +58,10 @@ export function LeadForm({ source, audience = "both" }: { source: Source; audien
       consentGranted: form.get("demoConsent") === "on",
       website: text("website") ?? ""
     };
+    if (process.env.NEXT_PUBLIC_STATIC_PREVIEW === "true") {
+      setMessage("Предварительная версия: запрос не отправлен и не сохранён.");
+      return;
+    }
     setBusy(true);
     try {
       const response = await fetch("/api/leads/", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });

@@ -1,18 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Suspense } from "react";
 import { ArrowRight } from "lucide-react";
 import { EstimateWizard } from "@/components/estimate-wizard";
+import { CostEstimate } from "@/components/cost-estimate";
 import { CostSavingsCalculator } from "@/components/cost-savings-calculator";
 import { isPublicMode, metadataFor } from "@/lib/site";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = metadataFor("/cost/");
-type SearchParams = Promise<{ type?: string | string[] }>;
 
-export default async function CostPage({ searchParams }: { searchParams: SearchParams }) {
-  const params = await searchParams;
-  const selection = Array.isArray(params.type) ? params.type[0] : params.type;
-  const initialAudience = selection === "home" || selection === "business" ? selection : "both";
+export default function CostPage() {
   return (
     <main id="main-content" className={styles.page}>
       <section className={`container ${styles.hero}`}>
@@ -27,7 +25,7 @@ export default async function CostPage({ searchParams }: { searchParams: SearchP
         </div>
         <CostSavingsCalculator />
       </section> : null}
-      <section className={`container ${styles.formSection}`} aria-labelledby="request-heading"><div className={styles.formIntro}><p className="eyebrow"><span className="eyebrowLine" />Заявка на предварительную оценку</p><h2 id="request-heading">Расскажите о проекте</h2><p>Площадь можно не знать. Подготовка плана или технического задания необязательна.</p></div><EstimateWizard initialAudience={initialAudience} /></section>
+      <section className={`container ${styles.formSection}`} aria-labelledby="request-heading"><div className={styles.formIntro}><p className="eyebrow"><span className="eyebrowLine" />Заявка на предварительную оценку</p><h2 id="request-heading">Расскажите о проекте</h2><p>Площадь можно не знать. Подготовка плана или технического задания необязательна.</p></div><Suspense fallback={<EstimateWizard initialAudience="both" />}><CostEstimate /></Suspense></section>
     </main>
   );
 }

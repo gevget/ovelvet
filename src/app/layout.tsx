@@ -22,7 +22,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="ru" data-scroll-behavior="smooth">
       <body>
         <a className="skipLink" href="#main-content">К основному содержанию</a>
-        {!isPublicMode ? <div className="previewNotice"><span>ЛОКАЛЬНЫЙ ПРЕДПРОСМОТР</span><i /> Фотографии объектов и характеристики материалов добавим после подтверждения</div> : null}
+        {!isPublicMode ? <div className="previewNotice"><span>{process.env.NEXT_PUBLIC_STATIC_PREVIEW === "true" ? "ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ" : "ЛОКАЛЬНЫЙ ПРЕДПРОСМОТР"}</span><i /> Фотографии объектов и характеристики материалов добавим после подтверждения</div> : null}
         <SiteHeader />
         {children}
         <SiteFooter />

@@ -23,6 +23,11 @@ export const footerNavigation = [
 
 export const isPublicMode = process.env.SITE_MODE === "public" && process.env.PUBLIC_CONTENT_APPROVED === "true" && publicSiteReadiness().ready;
 export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+export const siteBasePath = (process.env.NEXT_PUBLIC_BASE_PATH ?? "").replace(/\/$/, "");
+
+export function absoluteSitePath(path: string) {
+  return new URL(`${siteBasePath}${path}`, siteUrl).toString();
+}
 
 export const routeMeta = {
   "/": {
@@ -83,10 +88,11 @@ export type SiteRoute = keyof typeof routeMeta;
 
 export function metadataFor(route: SiteRoute) {
   const { title, description } = routeMeta[route];
+  const canonical = absoluteSitePath(route);
   return {
     title,
     description,
-    alternates: { canonical: route },
-    openGraph: { title, description, url: route, type: "website" as const }
+    alternates: { canonical },
+    openGraph: { title, description, url: canonical, type: "website" as const }
   };
 }
