@@ -7,7 +7,7 @@ import rehypeSanitize from "rehype-sanitize";
 import rehypeStringify from "rehype-stringify";
 import { isPublicMode } from "@/lib/site";
 
-const contentRoot = path.join(process.cwd(), "03_CONTENT_SEO");
+const contentRoot = path.join(process.cwd(), "src", "content");
 
 export type ArticleEntry = { slug: string; file: string; title: string; description: string; topic: string; status: "draft" | "published"; related: string[] };
 
