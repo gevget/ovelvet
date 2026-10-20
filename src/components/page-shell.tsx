@@ -196,7 +196,7 @@ function ContentLayout({ section, layout, slug }: { section: PageSection; layout
     ];
     return <div className={styles.materialCatalog}>
       {samples.map((sample) => <article className={styles.materialCatalogCard} key={sample.number}>
-        <PlaceholderMedia slot={sample.slot} className={styles.materialCatalogImage} showCaption={false} />
+        <PlaceholderMedia slot={sample.slot} sizes="112px" className={styles.materialCatalogImage} showCaption={false} />
         <div className={styles.materialCatalogCopy}>
           <span>ВИЗУАЛИЗАЦИЯ · НЕ ОБРАЗЕЦ</span>
           <h3>Фактура {sample.number}</h3>
@@ -308,14 +308,14 @@ function StorySections({ slug, sections }: { slug: PageSlug; sections: PageSecti
         </section>
         {slug === "stretch-walls" && index === 1 ? <section className={`container ${styles.diagramFeature}`} aria-labelledby="stretch-diagram-heading">
           <div className={styles.diagramCopy}><p className="eyebrow"><span className="eyebrowLine" />Схема конструкции</p><h2 id="stretch-diagram-heading">Стена в разрезе</h2><p>Условная схема показывает основные слои. Конфигурация уточняется для конкретного проекта.</p><Link href="/technology" className={styles.textLink}>Подробнее о технологии <ArrowRight size={16} aria-hidden="true" /></Link></div>
-          <PlaceholderMedia slot="technologyCutaway" label="КОНЦЕПТУАЛЬНАЯ ВИЗУАЛИЗАЦИЯ / принцип конструкции" />
+          <PlaceholderMedia slot="technologyCutaway" sizes="(max-width: 767px) calc(100vw - 72px), (max-width: 900px) 55vw, 63vw" label="КОНЦЕПТУАЛЬНАЯ ВИЗУАЛИЗАЦИЯ / принцип конструкции" />
         </section> : null}
         {roomSection && !isPublicMode ? <section className={`container ${styles.homeGallery}`} aria-label="Подготовка фотоматериалов">
           <div className={styles.galleryHeading}><p className="eyebrow"><span className="eyebrowLine" />Интерьер и фактура</p><p>Три концепта показывают разные сочетания текстиля, цвета и света. Это визуализации интерьеров, а не фотографии выполненных объектов.</p></div>
           <div className={styles.galleryGrid}>
-            <PlaceholderMedia slot="homeGalleryOne" />
-            <PlaceholderMedia slot="homeGalleryTwo" />
-            <PlaceholderMedia slot="homeGalleryThree" />
+            <PlaceholderMedia slot="homeGalleryOne" sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1344px) 24vw, 320px" />
+            <PlaceholderMedia slot="homeGalleryTwo" sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1344px) 24vw, 320px" />
+            <PlaceholderMedia slot="homeGalleryThree" sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1344px) 24vw, 320px" />
           </div>
         </section> : null}
       </div>;
@@ -336,6 +336,16 @@ export async function PageShell({ eyebrow, title, lead, slug, media, cta, formSo
   };
   const heroSlot = media ?? mediaByPage[slug];
   const pageVariant = styles[slug] ?? "";
+  const heroMediaWidths: Record<PageSlug, string> = {
+    "stretch-walls": "55vw",
+    home: "62vw",
+    business: "56vw",
+    technology: "60vw",
+    designers: "50vw",
+    materials: "40vw",
+    about: "56vw"
+  };
+  const heroMediaSizes = `(max-width: 767px) calc(100vw - 32px), (max-width: 900px) calc(100vw - 64px), ${heroMediaWidths[slug]}`;
 
   return <main id="main-content" className={`${styles.page} ${pageVariant}`}>
     <div className={`container ${styles.hero}`}>
@@ -345,7 +355,7 @@ export async function PageShell({ eyebrow, title, lead, slug, media, cta, formSo
         <p className={styles.lead}>{lead}</p>
         {cta ? <Link className="button buttonDark" href={cta.href}>{cta.label}<ArrowUpRight size={17} aria-hidden="true" /></Link> : null}
       </div>
-      <PlaceholderMedia slot={heroSlot} priority label="PHOTO PLACEHOLDER / визуальный материал будет добавлен" />
+      <PlaceholderMedia slot={heroSlot} sizes={heroMediaSizes} priority label="PHOTO PLACEHOLDER / визуальный материал будет добавлен" />
     </div>
     <StorySections slug={slug} sections={sections} />
     {formSource ? <section className={`container ${styles.formSection}`} aria-labelledby="page-form-heading"><div><p className="eyebrow"><span className="eyebrowLine" />Демо-форма</p><h2 id="page-form-heading">Обсудить задачу</h2><p>Проверьте форму на тестовых данных. Запрос не передаётся владельцу и не сохраняется.</p></div><LeadForm source={formSource} audience={formAudience} /></section> : null}

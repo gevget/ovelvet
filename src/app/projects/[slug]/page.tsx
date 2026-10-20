@@ -35,7 +35,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           <p>{project.description}</p>
           <Link href="/projects"><ArrowLeft size={16} aria-hidden="true" />К примерам</Link>
         </div>
-        <PlaceholderMedia slot={project.imageSlot} showCaption={false} priority />
+        <PlaceholderMedia slot={project.imageSlot} sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1280px) 64vw, 820px" showCaption={false} priority />
       </div>
       <p className={styles.detailNote}>Изображение — новый концептуальный рендер по фотографии объекта из предоставленного архива. Это не фотография результата; оттенки и детали визуализации могут отличаться от исходного интерьера.</p>
     </main>

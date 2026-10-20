@@ -37,7 +37,7 @@ export default function HomePage() {
             <div className={styles.heroFoot}><span>01 / 13</span><span className={styles.heroFootHighlight}>Для жилых и коммерческих пространств</span></div>
           </div>
           <div className={styles.heroMedia}>
-            <PlaceholderMedia slot="homeHero" priority label="PHOTO PLACEHOLDER / фото интерьера ожидается" />
+            <PlaceholderMedia slot="homeHero" priority sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1000px) calc(100vw - 64px), 50vw" label="PHOTO PLACEHOLDER / фото интерьера ожидается" />
             <span className={styles.mediaIndex}>OV — 01</span>
           </div>
         </div>
@@ -61,12 +61,12 @@ export default function HomePage() {
           </div>
           <div className={styles.audienceGrid}>
             <Link className={styles.audienceCard} href="/home">
-              <PlaceholderMedia slot="homeAudienceHome" label="PHOTO PLACEHOLDER / жилой интерьер ожидается" />
+              <PlaceholderMedia slot="homeAudienceHome" sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1280px) 45vw, 576px" label="PHOTO PLACEHOLDER / жилой интерьер ожидается" />
               <div className={styles.audienceCardText}><div><span>01 / ЧАСТНЫЙ ИНТЕРЬЕР</span><h3>Для дома</h3></div><ArrowUpRight size={22} strokeWidth={1.5} aria-hidden="true" /></div>
               <p>Фактура, освещение и детали повседневного использования — в едином решении.</p>
             </Link>
             <Link className={styles.audienceCard} href="/business">
-              <PlaceholderMedia slot="homeAudienceBusiness" label="PHOTO PLACEHOLDER / коммерческий интерьер ожидается" />
+              <PlaceholderMedia slot="homeAudienceBusiness" sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1280px) 45vw, 576px" label="PHOTO PLACEHOLDER / коммерческий интерьер ожидается" />
               <div className={styles.audienceCardText}><div><span>02 / КОММЕРЧЕСКОЕ ПРОСТРАНСТВО</span><h3>Для бизнеса</h3></div><ArrowUpRight size={22} strokeWidth={1.5} aria-hidden="true" /></div>
               <p>Обсудим требования объекта, технические узлы и организацию работ.</p>
             </Link>
@@ -80,13 +80,13 @@ export default function HomePage() {
             <div><p className="eyebrow"><span className="eyebrowLine" />Визуальный результат</p><h2 id="project-title" className="sectionHeading">Сначала вы видите пространство. Потом замечаете детали.</h2></div>
             <p className="sectionLead">Концептуальные визуализации помогают увидеть фактуру и пропорции. Фотографии реализованных объектов добавим после согласования и проверки прав.</p>
           </div>
-          <div className={styles.projectMedia}><PlaceholderMedia slot="homeProjectFeature" label="ВИЗУАЛИЗАЦИЯ / концепт интерьера" /><div className={styles.projectMediaLabel}><span>ВИЗУАЛИЗАЦИЯ</span><b>Концепт интерьера · не объект из портфолио</b></div></div>
+          <div className={styles.projectMedia}><PlaceholderMedia slot="homeProjectFeature" sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1344px) calc(100vw - 64px), 1280px" label="ВИЗУАЛИЗАЦИЯ / концепт интерьера" /><div className={styles.projectMediaLabel}><span>ВИЗУАЛИЗАЦИЯ</span><b>Концепт интерьера · не объект из портфолио</b></div></div>
         </div>
       </section> : null}
 
       <section className={`section ${styles.productSection}`} aria-labelledby="product-title">
         <div className={`container ${styles.productGrid}`}>
-          <div className={styles.productMedia}><PlaceholderMedia slot="homeProductTexture" label="ВИЗУАЛИЗАЦИЯ / фактура материала" /></div>
+          <div className={styles.productMedia}><PlaceholderMedia slot="homeProductTexture" sizes="(max-width: 767px) calc(100vw - 32px), 580px" label="ВИЗУАЛИЗАЦИЯ / фактура материала" /></div>
           <div className={styles.productCopy}>
             <p className="eyebrow"><span className="eyebrowLine" />Принцип системы</p>
             <h2 id="product-title" className="sectionHeading">Что такое натяжные стены</h2>
@@ -104,7 +104,7 @@ export default function HomePage() {
           </div>
           <div className={styles.workGrid}>
             {workExamples.map((example, index) => <article className={styles.workCard} key={example.slug}>
-              <PlaceholderMedia slot={example.slot} />
+              <PlaceholderMedia slot={example.slot} sizes="(max-width: 479px) calc(100vw - 32px), (max-width: 767px) calc(50vw - 22px), (max-width: 1344px) calc(33.333vw - 18px), 410px" />
               <div className={styles.workCardCopy}><span>{String(index + 1).padStart(2, "0")} / ВИЗУАЛИЗАЦИЯ ПО ФОТО ОБЪЕКТА</span><h3>{example.title}</h3></div>
             </article>)}
           </div>
@@ -128,7 +128,7 @@ export default function HomePage() {
         <div className={`container ${styles.technologyGrid}`}>
           <div className={styles.diagramWrap}>
             <div className={styles.diagramCaption}><span>КОНЦЕПТУАЛЬНЫЙ РАЗРЕЗ</span><span>БЕЗ РАЗМЕРОВ · НЕ РАБОЧИЙ ЧЕРТЁЖ</span></div>
-            <PlaceholderMedia slot="technologyCutaway" showCaption={false} />
+            <PlaceholderMedia slot="technologyCutaway" sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1000px) 45vw, 44vw" showCaption={false} />
             <p className={styles.diagramFoot}>Показан общий принцип. Точная конструкция определяется документацией конкретной системы.</p>
           </div>
           <div className={styles.technologyCopy}>
@@ -148,9 +148,9 @@ export default function HomePage() {
             <div className="sectionTopActions"><Link className="textLink" href="/materials">Как выбирать материалы <ArrowUpRight size={16} aria-hidden="true" /></Link></div>
           </div>
           <div className={styles.materialGrid}>
-            <PlaceholderMedia slot="homeMaterialSampleOne" label="ВИЗУАЛИЗАЦИЯ / фактура материала" />
+            <PlaceholderMedia slot="homeMaterialSampleOne" sizes="(max-width: 767px) calc(50vw - 23px), (max-width: 1344px) 34vw, 430px" label="ВИЗУАЛИЗАЦИЯ / фактура материала" />
             <div className={styles.materialText}><span>01 / ВЫБОР МАТЕРИАЛА</span><p>Один оттенок по-разному выглядит при дневном и искусственном свете. Материал стоит оценивать вместе с задачей интерьера и условиями эксплуатации.</p><Link className="textLink" href="/contacts">Обсудить подбор <ArrowRight size={15} aria-hidden="true" /></Link></div>
-            <PlaceholderMedia slot="homeMaterialSampleTwo" label="ВИЗУАЛИЗАЦИЯ / фактура материала" />
+            <PlaceholderMedia slot="homeMaterialSampleTwo" sizes="(max-width: 767px) calc(50vw - 23px), (max-width: 1344px) 34vw, 430px" label="ВИЗУАЛИЗАЦИЯ / фактура материала" />
           </div>
         </div>
       </section>
@@ -176,7 +176,7 @@ export default function HomePage() {
 
       <section className={`section ${styles.designersSection}`} aria-labelledby="designers-title">
         <div className={`container ${styles.designersGrid}`}>
-          <div className={styles.designersMedia}><PlaceholderMedia slot="homeDesignerDetails" label="ВИЗУАЛИЗАЦИЯ / подбор материалов" /></div>
+          <div className={styles.designersMedia}><PlaceholderMedia slot="homeDesignerDetails" sizes="(max-width: 767px) calc(100vw - 32px), 46vw" label="ВИЗУАЛИЗАЦИЯ / подбор материалов" /></div>
           <div><p className="eyebrow"><span className="eyebrowLine" />Профессиональный маршрут</p><h2 id="designers-title" className="sectionHeading">Для тех, кто проектирует интерьер</h2><p className="sectionLead">Обсудим материалы, чертежи узлов, сопряжения с другими поверхностями и технологические ограничения до реализации.</p><Link className="textLink" href="/designers">Дизайнерам и архитекторам <ArrowUpRight size={16} aria-hidden="true" /></Link></div>
         </div>
       </section>

@@ -26,7 +26,7 @@ export default function ProjectsPage() {
       </section> : <section className={styles.projectGrid} aria-label="Визуальные примеры проектов">
         {previewProjects.map((project, index) => <article className={styles.projectCard} key={project.slug}>
           <Link href={`/projects/${project.slug}/` as Route} className={styles.projectLink}>
-            <div className={styles.projectVisual}><PlaceholderMedia slot={project.imageSlot} showCaption={false} priority={index === 0} /><span className={styles.projectMarker}>ВИЗУАЛИЗАЦИЯ ПО ФОТО ОБЪЕКТА</span></div>
+            <div className={styles.projectVisual}><PlaceholderMedia slot={project.imageSlot} sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1344px) 45vw, 600px" showCaption={false} priority={index === 0} /><span className={styles.projectMarker}>ВИЗУАЛИЗАЦИЯ ПО ФОТО ОБЪЕКТА</span></div>
             <h2>{project.title}</h2>
             <p>{project.description}</p>
             <span className={styles.projectMore}>О проекте <ArrowUpRight size={15} aria-hidden="true" /></span>
